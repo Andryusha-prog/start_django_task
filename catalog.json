@@ -1,0 +1,117 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Электротовары",
+      "description": "электрические товары для дома"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Компьютеры и комплектующие",
+      "description": "товары для компьютеров и все, что с ними связано"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "Инструменты",
+      "description": "инструменты для различного рода работ"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Монитор1",
+      "description": "монитор для пк",
+      "image": "",
+      "category": 4,
+      "price": 8400.0,
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Блок питания",
+      "description": "Блок питания 600Вт",
+      "image": "",
+      "category": 4,
+      "price": 5600.0,
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Лобзик",
+      "description": "Лобзик для работ по дереву",
+      "image": "",
+      "category": 5,
+      "price": 7300.0,
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Шуруповерт",
+      "description": "Шуруповерт аккумуляторный",
+      "image": "",
+      "category": 5,
+      "price": 10000.0,
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "лампа накаливания",
+      "description": "лампа накаливания какая-то",
+      "image": "",
+      "category": 3,
+      "price": 150.0,
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "тройник",
+      "description": "тройник на 3 розетки",
+      "image": "",
+      "category": 3,
+      "price": 55.0,
+      "created_at": null,
+      "updated_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "Кабель",
+      "description": "кабель длиной 50м",
+      "image": "",
+      "category": 3,
+      "price": 3000.0,
+      "created_at": null,
+      "updated_at": null
+    }
+  }
+]
