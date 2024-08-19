@@ -32,3 +32,16 @@ class Product(models.Model):
     def __str__(self):
         return f'{self.name} - {self.price}'
 
+
+class Version(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, blank=True, null=True, related_name='products')
+    num_ver = models.IntegerField(verbose_name='номер версии')
+    name_ver = models.CharField(max_length=50, verbose_name='название версии')
+    cur_ver = models.BooleanField(verbose_name='признак текущей версии')
+
+    class Meta:
+        verbose_name = 'версия'
+        verbose_name_plural = 'версии'
+
+    def __str__(self):
+        return f'Версия {self.num_ver}: {self.name_ver}'
