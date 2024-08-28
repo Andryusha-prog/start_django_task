@@ -1,5 +1,7 @@
 from django.db import models
 
+from users.models import User
+
 
 # Create your models here.
 
@@ -23,6 +25,7 @@ class Product(models.Model):
     price = models.FloatField(verbose_name='цена за покупку')
     created_at = models.DateTimeField(verbose_name='дата создания', blank=True, null=True)
     updated_at = models.DateTimeField(verbose_name='дата послденего изменения', blank=True, null=True)
+    owner = models.ForeignKey(User, null=True, blank=True, verbose_name='Пользователь', on_delete=models.SET_NULL)
 
     class Meta:
         verbose_name = 'продукт'

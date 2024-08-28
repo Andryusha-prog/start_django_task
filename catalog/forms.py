@@ -17,7 +17,7 @@ class StyleFormMixin:
 class ProductFormCreate(StyleFormMixin, ModelForm):
     class Meta:
         model = Product
-        exclude = ('updated_at',)
+        exclude = ('updated_at', 'owner')
 
     bad_words = ['казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция', 'радар']
 
