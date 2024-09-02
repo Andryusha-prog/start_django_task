@@ -26,11 +26,17 @@ class Product(models.Model):
     created_at = models.DateTimeField(verbose_name='дата создания', blank=True, null=True)
     updated_at = models.DateTimeField(verbose_name='дата послденего изменения', blank=True, null=True)
     owner = models.ForeignKey(User, null=True, blank=True, verbose_name='Пользователь', on_delete=models.SET_NULL)
+    is_publicate = models.BooleanField(verbose_name='Признак публикации', default=False)
 
     class Meta:
         verbose_name = 'продукт'
         verbose_name_plural = 'продукты'
         ordering = ['pk']
+        permissions = [
+            ('can_change_publicate', 'can change publicate pr'),
+            ('can_change_description_product', 'can change publication product'),
+            ('can_change_category_product', 'can change category product')
+        ]
 
     def __str__(self):
         return f'{self.name} - {self.price}'

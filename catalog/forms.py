@@ -47,10 +47,15 @@ class ProductFormCreate(StyleFormMixin, ModelForm):
 class ProductFormUpdate(StyleFormMixin, ModelForm):
     class Meta:
         model = Product
-        exclude = ('created_at',)
+        exclude = ('created_at', 'is_publicate',)
 
 
 class VersionForm(StyleFormMixin, ModelForm):
     class Meta:
         model = Version
         fields = '__all__'
+
+class ProductModeratorForm(StyleFormMixin, ModelForm):
+    class Meta:
+        model = Product
+        fields = ('name', 'description', 'category', 'is_publicate')
