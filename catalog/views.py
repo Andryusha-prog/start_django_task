@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models.query import QuerySet
 from django.forms import inlineformset_factory
 from django.forms.models import BaseModelForm
 from django.shortcuts import render
@@ -6,8 +7,10 @@ from django.urls import reverse_lazy
 from django.views.generic import TemplateView, DetailView, ListView, CreateView, UpdateView, DeleteView
 
 from catalog.forms import ProductFormCreate, ProductFormUpdate, ProductModeratorForm, VersionForm
-from catalog.models import Product, Version
+from catalog.models import Category, Product, Version
 from django.core.exceptions import PermissionDenied
+
+from catalog.services import get_category_data
 
 
 # Create your views here.
@@ -88,3 +91,9 @@ class ProductUpdateView(UpdateView, LoginRequiredMixin):
 class ProductDeleteView(DeleteView, LoginRequiredMixin):
     model = Product
     success_url = reverse_lazy('catalog:products')
+
+class CategoryListView(ListView):
+    model = Category
+    
+    def get_queryset(self):
+        return get_category_data()
